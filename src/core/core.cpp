@@ -5,9 +5,9 @@
 ** main
 */
 
-#include "C_Game.hpp"
+#include "C_Core.hpp"
 
-Game::Game(std::shared_ptr<Registry> registry) : registry(registry), sceneManager(registry)
+Core::Core(std::shared_ptr<Registry> registry) : registry(registry), sceneManager(registry)
 {
     this->sceneManager.loadAllComponents();
     this->sceneManager.loadAllSystems();
@@ -15,10 +15,10 @@ Game::Game(std::shared_ptr<Registry> registry) : registry(registry), sceneManage
     this->loop();
 }
 
-Game::~Game()
+Core::~Core()
 {}
 
-void Game::loop()
+void Core::loop()
 {
     while (1) {
         registry->run_systems();

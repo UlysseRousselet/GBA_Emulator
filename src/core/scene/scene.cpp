@@ -5,7 +5,7 @@
 ** main
 */
 
-#include "C_Game.hpp"
+#include "C_Core.hpp"
 
 void SceneManager::loadAllComponents()
 {

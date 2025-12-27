@@ -6,7 +6,7 @@
 */
 
 
-#include "C_Game.hpp"
+#include "C_Core.hpp"
 #include "Registry.hpp"
 
 int main(int argc, char **argv)
@@ -14,7 +14,7 @@ int main(int argc, char **argv)
     std::shared_ptr<Registry> registry_ptr = std::make_shared<Registry>();
 
     try {
-        Game game(registry_ptr);
+        Core core(registry_ptr);
     } catch (std::exception &e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }

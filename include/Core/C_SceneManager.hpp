@@ -27,8 +27,7 @@ class SceneManager {
      * @brief Constructs a SceneManager instance.
      *
      * Initializes the scene manager with the provided Asio and Registry objects.
-     *
-     * @param asio Shared pointer to the C_Asio object for network communication.
+     * 
      * @param registry Shared pointer to the Registry object for managing entities and components.
      */
     SceneManager(std::shared_ptr<Registry> registry) : registry(registry)
