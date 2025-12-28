@@ -20,7 +20,6 @@
 
 #include "Components.hpp"
 #include "Entity.hpp"
-#include "Mod.hpp"
 #include "Sparse_array.hpp"
 #include "Zipper.hpp"
 #include <SFML/Graphics.hpp>
@@ -159,29 +158,11 @@ class Registry {
     }
 
     /**
-     * @brief Finds an entity based on a player's ID.
-     *
-     * This method searches for an entity that represents a player with the specified ID.
-     *
-     * @param id The ID of the player.
-     * @return The entity representing the player, or an invalid entity if not found.
-     */
-    Entity find_player_with_id(int id)
-    {
-        auto &it = get_components<Player>();
-        for (size_t i = 0; i < it.size(); i++) {
-            if (it[i].has_value() && it[i].value().id == id)
-                return Entity(i);
-        }
-        return Entity(-1);
-    }
-
-    /**
      * @brief Adds a component to an entity.
      *
      * This method associates a specified component with a given entity, adding it to the registry.
      *
-     * @tparam Component The type of the component to add.
+     * @tparam Component The type of the component to add.s
      * @param to The entity to which the component will be added.
      * @param c The component to add to the entity.
      * @return A reference to the added component.

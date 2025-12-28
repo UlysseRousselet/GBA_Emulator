@@ -30,8 +30,12 @@ class SceneManager {
      * 
      * @param registry Shared pointer to the Registry object for managing entities and components.
      */
-    SceneManager(std::shared_ptr<Registry> registry) : registry(registry)
-    {}
+    SceneManager(std::shared_ptr<Registry> registry, int ac, char** av) : registry(registry)
+    {
+      for (int i = 0; i < ac; i++) {
+        roomFounds.push_back(av[i]);
+      }
+    }
 
     /**
      * @brief Destructor for the SceneManager class.
@@ -49,7 +53,10 @@ class SceneManager {
      */
     void loadAllSystems();
 
+    void loadAllRooms();
+
   protected:
+    std::vector<std::string> roomFounds;
     std::shared_ptr<Registry> registry; ///< Shared pointer to the Registry object for managing entities and components.
 };
 

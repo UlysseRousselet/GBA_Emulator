@@ -32,7 +32,7 @@ class Core {
      * 
      * @param registry Shared pointer to the Registry object for managing entities.
      */
-    Core(std::shared_ptr<Registry> registry);
+    Core(std::shared_ptr<Registry> registry, int ac, char ** av);
 
     /**
      * @brief Destructor of the Core class.

@@ -7,10 +7,11 @@
 
 #include "C_Core.hpp"
 
-Core::Core(std::shared_ptr<Registry> registry) : registry(registry), sceneManager(registry)
+Core::Core(std::shared_ptr<Registry> registry, int ac, char **av) : registry(registry), sceneManager(registry, ac, av)
 {
     this->sceneManager.loadAllComponents();
     this->sceneManager.loadAllSystems();
+    this->sceneManager.loadAllRooms();
 
     this->loop();
 }
