@@ -23,7 +23,7 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-file(GLOB SOURCES "src/*.cpp" "src/core/*.cpp" "src/core/scene/*.cpp" "src/systems/*.cpp")
+file(GLOB SOURCES "src/*.cpp" "src/core/*.cpp" "src/core/scene/*.cpp" "src/systems/*.cpp" "src/gba_utils/*.cpp")
 
 add_executable(gba_emulator ${SOURCES})
 
@@ -31,6 +31,7 @@ target_include_directories(gba_emulator PRIVATE
     ${PROJECT_SOURCE_DIR}/include/ECS/Components
     ${PROJECT_SOURCE_DIR}/include/ECS/Systems
     ${PROJECT_SOURCE_DIR}/include/ECS/Registry
+    ${PROJECT_SOURCE_DIR}/include/Gba_Utils
     ${PROJECT_SOURCE_DIR}/include/ECS
     ${PROJECT_SOURCE_DIR}/include/Core
     ${PROJECT_SOURCE_DIR}/include

@@ -18,6 +18,7 @@
 #include <iostream>
 #include <map>
 #include <thread>
+#include <fstream>
 
 /**
  * @class Core

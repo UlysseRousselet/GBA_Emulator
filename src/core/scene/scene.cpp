@@ -6,7 +6,7 @@
 */
 
 #include "C_Core.hpp"
-#include <fstream>
+#include "GbaUtils.hpp"
 
 void SceneManager::loadAllComponents()
 {
@@ -32,7 +32,14 @@ void SceneManager::loadAllRooms()
             file.read(reinterpret_cast<char*>(rom.data()), size);
             Entity newEntity = registry->spawn_entity();
             registry->add_component<Memory>(newEntity, Memory{rom});
-            registry->add_component<CPU>(newEntity, CPU{0x01, 0xB0, 0x00, 0x13, 0x00, 0xD8, 0x01, 0x4D, 0xFFFE, 0x0100});
+            registry->add_component<CPU>(newEntity, CPU{0x01, 0xB0, 0x00, 0x13, 0x00, 0xD8, 0x01, 0x4D, 0xFFFE, 0x0100, {
+                {0x00, [](CPU &cpu, Memory &mem) { /* NOP */ }},
+                {0xC3, jp_C3},
+                {0x21, ld_21},
+                {0xAF, xor_AF},
+                {0x0E, ld_0E},
+                {0x06, ld_06}
+            }});
         }
     }
 }
