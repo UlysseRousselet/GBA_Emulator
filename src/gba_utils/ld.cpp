@@ -74,3 +74,48 @@ void ld_2C(CPU &cpu, Memory &mem)
     uint16_t address = (cpu.H << 8) | cpu.L;
     cpu.E = mem.data[address];
 }
+
+void ld_3A(CPU &cpu, Memory &mem)
+{
+    uint16_t address = (cpu.H << 8) | cpu.L;
+    cpu.A = mem.data[address];
+    cpu.L++;
+    if (cpu.L == 0)
+        cpu.H++;
+}
+
+void ld_2E(CPU &cpu, Memory &mem)
+{
+    uint16_t address = (cpu.H << 8) | cpu.L;
+    cpu.B = mem.data[address];
+    cpu.L++;
+    if (cpu.L == 0)
+        cpu.H++;
+}
+
+void ld_32(CPU &cpu, Memory &mem)
+{
+    uint16_t address = (cpu.H << 8) | cpu.L;
+    cpu.C = mem.data[address];
+    cpu.L++;
+    if (cpu.L == 0)
+        cpu.H++;
+}
+
+void ld_36(CPU &cpu, Memory &mem)
+{
+    uint16_t address = (cpu.H << 8) | cpu.L;
+    cpu.D = mem.data[address];
+    cpu.L++;
+    if (cpu.L == 0)
+        cpu.H++;
+}
+
+void ld_3A(CPU &cpu, Memory &mem)
+{
+    uint16_t address = (cpu.H << 8) | cpu.L;
+    cpu.E = mem.data[address];
+    cpu.L++;
+    if (cpu.L == 0)
+        cpu.H++;
+}
