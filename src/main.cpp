@@ -1,16 +1,18 @@
 /*
-** EPITECH PROJECT, 2024
+** EPITECH, 2024
 ** Projet perso
 ** File description:
 ** main
 */
 
-
+#include <iostream>
 #include "C_Core.hpp"
 #include "Registry.hpp"
 
 int main(int argc, char **argv)
 {
+    std::cout << "Hello World" << std::endl;
+
     std::shared_ptr<Registry> registry_ptr = std::make_shared<Registry>();
 
     try {
