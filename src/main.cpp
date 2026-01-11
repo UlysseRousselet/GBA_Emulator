@@ -11,8 +11,6 @@
 
 int main(int argc, char **argv)
 {
-    std::cout << "Hello World" << std::endl;
-
     std::shared_ptr<Registry> registry_ptr = std::make_shared<Registry>();
 
     try {

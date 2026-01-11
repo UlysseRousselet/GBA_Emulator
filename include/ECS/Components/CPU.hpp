@@ -9,6 +9,8 @@
 struct CPU {
     uint8_t A, F, B, C, D, E, H, L;
     uint16_t SP, PC;
+    int cycles;
+    bool IME;
     std::map<uint8_t, std::function<void(CPU&, Memory&)>> instructions;
 };
 
